@@ -17,7 +17,7 @@ const Convert = () => {
 
   const handleConvert = async () => {
     try {
-      const res = await axios.post('http://localhost:3001/api/detection/analyze', {
+      const res = await axios.post('http://52.66.251.84:3001/api/detection/analyze', {
         text,
         targetLang,
         userId: user._id
