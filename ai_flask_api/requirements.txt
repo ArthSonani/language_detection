@@ -1,0 +1,9 @@
+Flask
+flask-cors==5.0.1
+numpy==1.26.4
+pandas==2.2.2
+tensorflow==2.19.0
+scikit-learn==1.5.1
+translate==3.6.1
+pillow
+pytesseract==0.3.13
