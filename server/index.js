@@ -35,4 +35,4 @@ mongoose.connect('mongodb+srv://arthsonani:arth1234@languagedetection.p8v2obj.mo
 app.use('/api/users', userRoutes);
 app.use('/api/detection', detectionRoutes);
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(3001, () => console.log('Server running on port 3001'));
