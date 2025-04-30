@@ -14,19 +14,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  
-  // Handle preflight requests
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-  next();
-});
-
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://arthsonani:arth1234@languagedetection.p8v2obj.mongodb.net/?retryWrites=true&w=majority&appName=languagedetection').then(() => console.log('MongoDB connected'))
