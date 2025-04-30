@@ -8,7 +8,7 @@ const app = express();
 
 // Configure CORS with more specific options
 app.use(cors({
-  origin: '*', // Allow all origins in development. In production, replace with your frontend URL
+  origin: 'https://language-detection-six.vercel.app/', // Allow all origins in development. In production, replace with your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
