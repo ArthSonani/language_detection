@@ -14,7 +14,7 @@ const Detect = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/detection/analyze", {
+      const res = await axios.post("http://localhost:3001/api/detection/analyze", {
         text,
         userId: user._id,
       });
