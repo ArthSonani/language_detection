@@ -32,6 +32,10 @@ app.use(express.json());
 mongoose.connect('mongodb+srv://arthsonani:arth1234@languagedetection.p8v2obj.mongodb.net/?retryWrites=true&w=majority&appName=languagedetection').then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+app.get('/test', (req, res) => {
+  res.send('Server is running!');
+});
+
 app.use('/api/users', userRoutes);
 app.use('/api/detection', detectionRoutes);
 
