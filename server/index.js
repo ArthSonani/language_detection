@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/langdetect').then(() => console.log('MongoDB connected'))
+mongoose.connect('mongodb+srv://arthsonani:arth1234@languagedetection.p8v2obj.mongodb.net/?retryWrites=true&w=majority&appName=languagedetection').then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 app.use('/api/users', userRoutes);
