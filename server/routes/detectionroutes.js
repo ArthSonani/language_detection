@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/analyze', async (req, res) => {
     const { text, targetLang, userId } = req.body;
     try {
-      const response = await axios.post('http://localhost:8000/predict', {
+      const response = await axios.post('http://65.2.122.171:8000/predict', {
         text,
         target_lang: targetLang,
       });
