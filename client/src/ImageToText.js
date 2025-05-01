@@ -19,7 +19,7 @@ const ImageToText = () => {
     formData.append('image', image);
 
     try {
-      const res = await axios.post('http://localhost:8000/image-to-text', formData);
+      const res = await axios.post('http://65.2.122.171:8000/image-to-text', formData);
       setExtractedText(res.data.text);
       setDetectedLang(res.data.detectedLang);
     } catch (err) {
