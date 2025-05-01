@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  flaskapi:
+    build:
+      context: ./ai_flask_api
+    container_name: flaskapi
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - mongodb
+
+  backend:
+    build:
+      context: ./server
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/langdetect
+      - JWT_SECRET=your_jwt_secret_key
+    depends_on:
+      - mongodb
+      - flaskapi
+
+  frontend:
+    build:
+      context: ./client
+    container_name: frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+      - REACT_APP_FLASK_API_URL=http://localhost:5001
+    depends_on:
+      - backend
+
+volumes:
+  mongodb_data:
