@@ -19,16 +19,18 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      <h2>Welcome, {user?.username || 'Guest'}</h2>
-      <div className="button-group">
-        <button onClick={() => navigate('/detect')}>Recognize Language</button>
-        <button onClick={() => navigate('/convert')}>Convert Language</button>
-        <button onClick={() => navigate('/history')}>History</button>
-        <button onClick={() => navigate('/image-to-text')}>Image to Text</button>
-        <button onClick={logout} className="logout">Logout</button>
+    <div className='aligntoroot'>
+      <div className="dashboard-container">
+        <h2>Welcome, {user?.username || 'Guest'}</h2>
+        <div className="button-group">
+          <button onClick={() => navigate('/detect')}>Recognize Language</button>
+          <button onClick={() => navigate('/convert')}>Convert Language</button>
+          <button onClick={() => navigate('/history')}>History</button>
+          <button onClick={() => navigate('/image-to-text')}>Image to Text</button>
+          <button onClick={logout} className="logout">Logout</button>
+        </div>
       </div>
-    </div>
+  </div>
   );
 };
 
