@@ -7,7 +7,7 @@ const HistoryPage = () => {
 
   useEffect(() => {
     const user = localStorage.getItem('email') || 'guest';
-    axios.post('http://localhost:8000/history', { user })
+    axios.post('http://65.2.122.171:8000/history', { user })
       .then(res => setHistory(res.data))
       .catch(err => console.error("Failed to fetch history", err));
   }, []);
