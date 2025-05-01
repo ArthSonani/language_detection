@@ -355,8 +355,12 @@ def image_to_text():
         app.logger.error(f"Exception in image-to-text route: {e}")
         return jsonify({"error": f"Internal Server Error: {str(e)}"}), 500
 
+@app.route('/test', methods=['GET'])
+def test_route():
+    return jsonify({"message": "Flask server is running!", "status": "success"})
+
 
 # ----------------- Main ------------------
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run(host='0.0.0.0', port=8000)
