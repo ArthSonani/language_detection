@@ -24,7 +24,7 @@ A full-stack MERN application enhanced with a Flask-based machine learning API t
 - **MongoDB**: Stores user-specific history and interactions (if integrated)
 
 ### ☁️ Deployment
-- Hosted on **AWS EC2** (currently offline)
+- Hosted on **AWS EC2**
 
 ---
 
